@@ -1,0 +1,55 @@
+<body style="background-color:darkcyan">
+<div class="container">
+  <br>
+  <div class="form">
+    <input type="text" id="name" class="form-control w-40 d-inline-block" placeholder="Enter Github username" autocomplete="off">
+    <button (click)="searchUser()" class="btn btn-success">Search Username&nbsp;<span><i class="fas fa-search"></i></span></button>
+  </div>
+  <ngx-loading-bar></ngx-loading-bar>
+  <div *ngIf="user.name !== 'User not found'">
+    <div  id="user-details" *ngIf="user.name.length > 0">
+      <div class="card">
+        <div class="card-header text-center">Profile</div>
+          <div id="profile" class="row">
+            <div class="card-body">
+                <img class="ml-0 col-5" src={{user.avatar}} height="200px" width="200px">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Name: <span appBold>{{user.name}}</span></li>
+                    <li class="list-group-item"><span><i class="fas fa-user-plus"></i>Followers:</span> {{user.followers}}</li>
+                    <li class="list-group-item"><span appBold><i class="fas fa-user-check"></i>Following:</span> {{user.following}}</li>
+                    <li class="list-group-item"><span appBold><i class="fas fa-box-open"></i>Repository: </span>{{user.repos}}</li>
+                    <li class="list-group-item"><span appBold><i class="fas fa-archive"></i>Bio:</span> {{user.bio}}</li>
+                    <li class="list-group-item"><span appBold><i class="far fa-calendar-alt"></i>Created: </span> <span appBold>{{user.created_at|dateCount}}</span> days ago</li>
+                  </ul><br>
+                <div class="btn-container">
+                  <button class="btn btn-success " id="repoBtn" (click)="toggleRepos()">View Repository</button>
+                </div>
+            </div>
+            </div>
+            <div  *ngIf="viewRepo">
+              <div class="card-header">
+                  <div class="repo-btn-container text-center mx-5 mt-4">
+                      <input type="text" class="mr-2 text-center form-control w-35 d-inline-block" placeholder="Search repository" autocomplete="off" id="repoSearch">
+                      <button (click)="searchRepo()" class="btn btn-success">Search<span><i class="fas fa-search"></i></span></button>&nbsp;
+                      <button class="btn btn-dark" (click)="viewAll()" id="viewAll">View All</button>
+                    </div>
+              </div>
+              <div class="card">
+                  <div id="repos">
+                      <app-repo-details [repos]="repos"></app-repo-details>
+                  </div>
+              </div>
+              
+            </div>
+      </div>
+    
+    </div>
+  </div>
+  <div *ngIf="user.name === 'User not found'">
+    <h2 class="text-center mt-5" id="error">Unavailable User<span><img src="https://img.icons8.com/cute-clipart/64/000000/cloud-alert.png"></span></h2>
+  </div>
+</div>
+</body>
+
+
+
