@@ -1,0 +1,51 @@
+<body style="background-color:darkcyan">
+    <div class="card">
+        <div class="card-header text-center" style="font-size: 20px; background-color: darkgray">Profile</div>
+          <ngx-loading-bar></ngx-loading-bar>
+          <div *ngIf="user.name.length > 0">
+            <div  id="user-details">
+              <div id="profile">
+                <img class="card-img-top" src={{user.avatar}} id="center">
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Name: <span appBold>{{user.name}}</span></li>
+                        <li class="list-group-item"><span><i class="fas fa-user-plus"></i>Followers:</span> {{user.followers}}</li>
+                        <li class="list-group-item"><span appBold><i class="fas fa-user-check"></i>Following:</span> {{user.following}}</li>
+                        <li class="list-group-item"><span appBold><i class="fas fa-box-open"></i>Repos: </span>{{user.repos}}</li>
+                        <li class="list-group-item"><span appBold><i class="fas fa-archive"></i>Bio:</span> {{user.bio}}</li>
+                        <li class="list-group-item"><span appBold><i class="far fa-calendar-alt"></i>Created: </span> <span appBold>{{user.created_at|dateCount}}</span> days ago</li>
+                      </ul><br>
+              
+                <br><br>
+                <div class="row">
+                    <div class="btn-container">
+                        <button class="btn btn-success" id="repoBtn" (click)="toggleRepos()">View Repository</button>
+                      </div>
+                </div>
+                </div>
+                
+              </div>
+              <div  *ngIf="viewRepo">
+                <div class="card-header">
+                    <div class="repo-btn-container text-center mx-5 mt-4">
+                        <input type="text" class="mr-2 text-center form-control w-25 d-inline-block" placeholder="Search repository" autocomplete="off" id="repoSearch">
+                        <button (click)="searchRepo()" class="btn btn-success">search&nbsp;<span><i class="fas fa-search"></i></span></button>&nbsp;
+                        <button class="btn btn-dark" (click)="viewAll()" id="viewAll">View All</button>
+                      </div>
+                </div>
+                
+                <div class="card">
+                    <div id="repos">
+                        <app-repo-details [repos]="repos"></app-repo-details>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+          </div> 
+      </div>
+</body>
+  
+
+
+
