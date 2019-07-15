@@ -1,27 +1,74 @@
-# SearchGitHubApi
+## Project Name
+-SearchGitHubApi
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
+## DESCRIPTION
+-This project was generated using Angular CLI version 8.1.1.
 
-## Development server
+This is a SearchGithubApi application that allows a user to submit github's username information, and get their public repositories and you are able to view all the repositories.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## User Story
+-Users can enter a Github username information in a form and submit it.
 
-## Code scaffolding
+-Users can see names and descriptions of person's public repositories.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+-Users can make up to 5000 requests per hour due to Github-API integration but only 60 requests per hour _without_ one. 
 
-## Build
+## Prerequisites
+To work with SearchGitHubApi you need to have some few prerequisites.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+They include;
 
-## Running unit tests
+-Node.js
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+-Angular framework
 
-## Running end-to-end tests
+-Typescript
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+-Terminal
 
-## Further help
+## SETUP/INSTALLATION
+{Please follow the instructions below to set up.}
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Have access to Internet connection.
+
+Navigate to a Webpage URL to load in URL's:
+
+To get to use SearchGitHubApi first you need to get to the SearchGitHubApi repository.
+
+Link:-> https://github.com/sanii-muthui/SearchGitHubApi
+
+From there you can access the repo.
+
+Clone the project.
+
+After cloning, get into project folder (cd into project).
+
+On your bash terminal Run the command:-
+
+-ng serve
+
+Open your prefered web browser and load it on local host:
+http://localhost:4200/
+
+## TECHNOLOGIES USED
+Angular Version8 (Framework)
+
+Type Script
+
+Javascript
+
+Bootstrap
+
+CSS
+
+Development server -Run ng serve and Navigate to http://localhost:4200/.
+
+## Support and Contact details
+-Email Address: muthuisanii@gmail.com
+
+-github-username: sanii-muthui
+
+## License
+The app is licensed by muthuiHub.
+
+MIH (c) 2019.
