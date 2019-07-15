@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-body">
+          <div *ngFor="let repo of repos">
+            <div *ngIf="repo.display" id="repos">
+              <div class="card-body">
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item"><strong><img src="https://img.icons8.com/material-sharp/24/000000/tag-window.png">Name: {{repo.name}}</strong></li>
+                      <li class="list-group-item"><span  appBold><img src="https://img.icons8.com/ios-glyphs/24/000000/code.png">Language:</span> {{repo.language}}</li>
+                      <li class="list-group-item"><span appBold><img src="https://img.icons8.com/material/24/000000/fork.png">Forks: </span>{{repo.forks}}</li>
+                      <li class="list-group-item"><span appBold><img src="https://img.icons8.com/ios-glyphs/30/000000/thumbs-up-down.png">Stars:</span> {{repo.stars}}</li>
+                      
+                    </ul><br>
+                  <p> </p>
+                  <p></p>
+                  <p></p>
+                  <p></p>
+                  <button class="btn btn-success btn-sm repo-link"><a target="_blank" id="repoLink" class="text-white" href={{repo.url}}>View on Github</a></button>
+              </div>
+              <hr style=" border: 2px solid black;">
+            </div>
+          </div>
+  </div>
+</div>
+
+
